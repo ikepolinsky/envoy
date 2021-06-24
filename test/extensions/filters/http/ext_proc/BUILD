@@ -1,6 +1,7 @@
 load(
     "//bazel:envoy_build_system.bzl",
     "envoy_package",
+    "envoy_cc_fuzz_test",
 )
 load(
     "//test/extensions:extensions_build_system.bzl",
@@ -148,5 +149,22 @@ envoy_extension_cc_test_library(
         "//test/test_common:utility_lib",
         "@com_google_absl//absl/strings:str_format",
         "@envoy_api//envoy/config/core/v3:pkg_cc_proto",
+    ],
+)
+
+envoy_cc_fuzz_test(
+    name = "streaming_fuzz_test",
+    srcs = ["streaming_fuzz_test.cc"],
+    corpus = "streaming_corpus",
+    deps = [
+        "//test/fuzz:utility_lib",
+        ":test_processor_lib",
+        "//source/common/network:address_lib",
+        "//source/extensions/filters/http/ext_proc:config",
+        "//test/common/http:common_lib",
+        "//test/integration:http_integration_lib",
+        "//test/test_common:utility_lib",
+        "@envoy_api//envoy/extensions/filters/http/ext_proc/v3alpha:pkg_cc_proto",
+        "@envoy_api//envoy/service/ext_proc/v3alpha:pkg_cc_proto",
     ],
 )
