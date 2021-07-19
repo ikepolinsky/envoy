@@ -66,6 +66,11 @@ bool ProcessorState::handleHeadersResponse(const HeadersResponse& response) {
           // If we get here, then all the body data came in before the header message
           // was complete, and the server wants the body. So, don't continue filter
           // processing, but send the buffered request body now.
+          if (bufferedData() == nullptr) {
+            ENVOY_LOG(debug, "bufferedData is null, initializing empty buffer");
+            Buffer::OwnedImpl buf;
+            addBufferedData(buf);
+          }
           ENVOY_LOG(debug, "Sending buffered request body message");
           filter_.sendBufferedData(*this, true);
         }
