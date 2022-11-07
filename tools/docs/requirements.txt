@@ -159,9 +159,9 @@ sphinx-copybutton==0.4.0 \
     --hash=sha256:4340d33c169dac6dd82dce2c83333412aa786a42dd01a81a8decac3b130dc8b0 \
     --hash=sha256:8daed13a87afd5013c3a9af3575cc4d5bec052075ccd3db243f895c07a689386
     # via -r tools/docs/requirements.txt
-sphinx-rtd-theme==0.5.2 \
-    --hash=sha256:32bd3b5d13dc8186d7a42fc816a23d32e83a4827d7d9882948e7b837c232da5a \
-    --hash=sha256:4a05bdbe8b1446d77a01e20a23ebc6777c74f43237035e76be89699308987d6f
+sphinx-rtd-theme==1.1.1 \
+    --hash=sha256:31faa07d3e97c8955637fc3f1423a5ab2c44b74b8cc558a51498c202ce5cbda7 \
+    --hash=sha256:6146c845f1e1947b3c3dd4432c28998a1693ccc742b4f9ad7c63129f0757c103
     # via -r tools/docs/requirements.txt
 sphinx-tabs==3.1.0 \
     --hash=sha256:63df94e84bc05eb8598419a313ffc24455a14d1a580d174bb748404063958a67 \
